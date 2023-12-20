@@ -45,7 +45,7 @@ def generate_launch_description():
                     '-x', '5.0',
                     '-z', '1.0',
                     '-Y', '1.57',
-                    '-file', os.path.join(pkg_simulation, 'models', 'dolly_ignition',
+                    '-file', os.path.join(pkg_simulation, 'models', 'robot_old',
                                           'model.sdf')],
                  output='screen')
 
@@ -54,8 +54,8 @@ def generate_launch_description():
         package='ros_ign_bridge',
         executable='parameter_bridge',
         arguments=[
-            '/dolly/laser_scan@sensor_msgs/msg/LaserScan@ignition.msgs.LaserScan',
-            '/dolly/cmd_vel@geometry_msgs/msg/Twist@ignition.msgs.Twist'
+            '/robot/laser_scan@sensor_msgs/msg/LaserScan@ignition.msgs.LaserScan',
+            '/robot/cmd_vel@geometry_msgs/msg/Twist@ignition.msgs.Twist'
             ],
         output='screen'
     )
