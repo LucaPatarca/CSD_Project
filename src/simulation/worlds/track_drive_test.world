@@ -2071,8 +2071,9 @@
       </joint>
 
       <!-- Track drive -->
-      <plugin filename="gz-sim-diff-drive-system"
-              name="gz::sim::systems::DiffDrive">
+      <plugin filename="libignition-gazebo-diff-drive-system.so"
+      name="ignition::gazebo::systems::DiffDrive">
+        <topic>/model/vehicle_green/cmd_vel</topic>
         <left_joint>left_track_wheel1_j</left_joint>
         <right_joint>right_track_wheel1_j</right_joint>
         <left_joint>left_track_wheel2_j</left_joint>
