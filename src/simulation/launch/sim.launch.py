@@ -71,7 +71,7 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(
           'ign_args',
-          default_value=[os.path.join(pkg_simulation, 'worlds', 'cave.world') +
+          default_value=[os.path.join(pkg_simulation, 'worlds', 'track_drive_test.world') +
                          ' -v 2 --gui-config ' +
                          os.path.join(pkg_simulation, 'ign', 'gui.config'), ''],
           description='Ignition Gazebo arguments'),
@@ -79,6 +79,6 @@ def generate_launch_description():
                               description='Open RViz.'),
         gazebo,
         spawn,
-        bridge,
-        rviz
+        # bridge,
+        # rviz
     ])
