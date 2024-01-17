@@ -43,11 +43,21 @@ def generate_launch_description():
                  arguments=[
                     '-name', 'robot',
                     '-x', '5.0',
-                    '-z', '1.0',
+                    '-z', '0.46',
                     '-Y', '1.57',
                     '-file', os.path.join(pkg_simulation, 'models', 'robot_old',
                                           'model.sdf')],
                  output='screen')
+    
+    # spawn = Node(package='ros_ign_gazebo', executable='create',
+    #              arguments=[
+    #                 '-name', 'dolly',
+    #                 '-x', '5.0',
+    #                 '-z', '0.46',
+    #                 '-Y', '1.57',
+    #                 '-file', os.path.join(pkg_simulation, 'models', 'dolly_ignition',
+    #                                       'model.sdf')],
+    #              output='screen')
 
     # Bridge
     bridge = Node(
@@ -71,7 +81,7 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(
           'ign_args',
-          default_value=[os.path.join(pkg_simulation, 'worlds', 'track_drive_test.world') +
+          default_value=[os.path.join(pkg_simulation, 'worlds', 'cave.world') +
                          ' -v 2 --gui-config ' +
                          os.path.join(pkg_simulation, 'ign', 'gui.config'), ''],
           description='Ignition Gazebo arguments'),
@@ -80,5 +90,5 @@ def generate_launch_description():
         gazebo,
         spawn,
         bridge,
-        # rviz
+        rviz
     ])
