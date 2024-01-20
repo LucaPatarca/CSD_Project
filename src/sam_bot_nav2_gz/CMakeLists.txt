@@ -31,6 +31,7 @@ install(
 
 # Install Python executables
 install(PROGRAMS
+  scripts/battery_state/battery_state_pub.py
   scripts/reach_goal.py
   scripts/follow_waypoints.py
   DESTINATION lib/${PROJECT_NAME}

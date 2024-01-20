@@ -29,7 +29,7 @@ def generate_launch_description():
         pkg_share, "src/description/sam_bot_description.urdf"
     )
     default_rviz_config_path = os.path.join(pkg_share, "rviz/urdf_config.rviz")
-    world_path = os.path.join(pkg_share, "world/cave.world")
+    world_path = os.path.join(pkg_share, "world/empty.sdf")
     gz_models_path = os.path.join(pkg_share, "models")
 
     use_sim_time = LaunchConfiguration("use_sim_time")
@@ -76,6 +76,12 @@ def generate_launch_description():
             os.path.join(pkg_share, "config/ekf.yaml"),
             {"use_sim_time": use_sim_time},
         ],
+    )
+
+    battery = Node(
+        package="sam_bot_nav2_gz",
+        executable="battery_state_pub.py",
+        output="screen",
     )
 
     # gazebo have to be executed with shell=False, or test_launch won't terminate it
@@ -363,5 +369,6 @@ def generate_launch_description():
             relay_cmd_vel,
             # relay_odom_2,
             # relay_cmd_vel_2,
+            battery,
         ] + gazebo
     )
