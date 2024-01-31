@@ -27,63 +27,10 @@ def generate_launch_description():
         ),
     )
     
-    robot_state_publisher = Node(
-        package="robot_state_publisher",
-        executable="robot_state_publisher",
-        namespace="pippo",
-        # remappings=[("/tf", "tf"), ("/tf_static", "tf_static")],
-        parameters=[
-            {"robot_description": Command(["xacro ", LaunchConfiguration("model")])}
-        ],
-    )
-    
-    spawn = Node( 
-        package='ros_gz_sim',
-        executable='create',
-        arguments=[ 
-            '-name', 'pippo',
-            '-topic', '/pippo/robot_description',
-            '-z', '0.2',
-            '-x', '-2',
-            '-y', '0',
-        ],
-        output='screen',
-    )
-    
-    load_joint_state_controller = ExecuteProcess(
-        name="activate_joint_state_broadcaster",
-        cmd=[
-            "ros2",
-            "control",
-            "load_controller",
-            "--set-state", "active",
-            "-c", "pippo/controller_manager",
-            "joint_state_broadcaster",
-        ],
-        shell=False,
-        output="screen",
-    )
-    
-    load_diff_drive_controller = ExecuteProcess(
-        name="activate_diff_drive_base_controller",
-        cmd=[
-            "ros2",
-            "control",
-            "load_controller",
-            "--set-state", "active",
-            "-c", "pippo/controller_manager",
-            "diff_drive_base_controller",
-        ],
-        shell=False,
-        output="screen",
-    )
-    
     rviz_node = Node(
         package="rviz2",
         executable="rviz2",
-        namespace='pippo',
         name="rviz2",
-        # remappings=[("/tf", "tf"), ("/tf_static", "tf_static")],
         output="screen",
         arguments=["-d", os.path.join(pkg_simulation, "rviz/simulation.rviz")],
     )
@@ -101,18 +48,9 @@ def generate_launch_description():
         output="screen",
     )
     
-    # spawn2 = Node( 
-    #     package='ros_gz_sim',
-    #     executable='create',
-    #     arguments=[ 
-    #         '-name', 'sam_bot2',
-    #         '-topic', 'robot_description',
-    #         '-z', '0.2',
-    #         '-x', '2',
-    #         '-y', '0',
-    #     ],
-    #     output='screen',
-    # )
+    pippo = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(pkg_simulation, 'launch/pippo.launch.py'))
+    )
 
     return LaunchDescription([
         SetEnvironmentVariable(
@@ -127,26 +65,8 @@ def generate_launch_description():
           'gz_args',
           default_value=[os.path.join(pkg_simulation, 'worlds', 'empty.sdf') + ' -r'],
           description='Ignition Gazebo arguments'),
-        DeclareLaunchArgument(
-            name="model",
-            default_value=os.path.join(pkg_simulation, "urdf/sam_bot.urdf"),
-            description="Absolute path to robot urdf file",),
         gazebo,
-        robot_state_publisher,
-        spawn,
-        RegisterEventHandler(
-            event_handler=OnProcessExit(
-                target_action=spawn,
-                on_exit=[load_joint_state_controller],
-            )
-        ),
-        RegisterEventHandler(
-            event_handler=OnProcessExit(
-                target_action=load_joint_state_controller,
-                on_exit=[load_diff_drive_controller],
-            )
-        ),
         rviz_node,
         bridge,
-        # spawn2,
+        pippo,
     ])
