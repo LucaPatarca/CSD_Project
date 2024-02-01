@@ -18,23 +18,22 @@ def generate_launch_description():
     robot_state_publisher = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
-        # name="pippo_state_publisher",
-        namespace="pippo",
-        # remappings=[("/tf", "tf"), ("/tf_static", "tf_static")],
+        # name="pluto_state_publisher",
+        namespace="pluto",
         parameters=[
-            {"robot_description": Command(["xacro ", os.path.join(pkg_simulation, "urdf/pippo.urdf")])}
+            {"robot_description": Command(["xacro ", os.path.join(pkg_simulation, "urdf/pluto.urdf")])}
         ],
     )
     
     spawn = Node( 
         package='ros_gz_sim',
         executable='create',
-        # namespace="pippo",
+        # namespace="pluto",
         arguments=[ 
-            '-name', 'pippo',
-            '-topic', '/pippo/robot_description',
+            '-name', 'pluto',
+            '-topic', '/pluto/robot_description',
             '-z', '0.2',
-            '-x', '-2',
+            '-x', '2',
             '-y', '0',
         ],
         output='screen',
@@ -47,8 +46,8 @@ def generate_launch_description():
             "control",
             "load_controller",
             "--set-state", "active",
-            "-c", "pippo/controller_manager",
-            "pippo_joint_state_broadcaster",
+            "-c", "pluto/controller_manager",
+            "pluto_joint_state_broadcaster",
         ],
         shell=False,
         output="screen",
@@ -61,8 +60,8 @@ def generate_launch_description():
             "control",
             "load_controller",
             "--set-state", "active",
-            "-c", "pippo/controller_manager",
-            "pippo_diff_drive_controller",
+            "-c", "pluto/controller_manager",
+            "pluto_diff_drive_controller",
         ],
         shell=False,
         output="screen",

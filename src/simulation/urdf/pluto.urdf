@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="pippo"
+<robot name="pluto"
   xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!-- Define robot constants -->
@@ -40,7 +40,7 @@
   </xacro:macro>
 
   <!-- Robot Base -->
-  <link name="pippo/base_link">
+  <link name="pluto/base_link">
     <visual>
       <geometry>
         <box size="${base_length} ${base_width} ${base_height}"/>
@@ -60,19 +60,19 @@
   </link>
 
   <!-- Robot Footprint -->
-  <link name="pippo/base_footprint">
+  <link name="pluto/base_footprint">
     <xacro:box_inertia m="0" w="0" d="0" h="0"/>
   </link>
 
   <joint name="base_joint" type="fixed">
-    <parent link="pippo/base_link"/>
-    <child link="pippo/base_footprint"/>
+    <parent link="pluto/base_link"/>
+    <child link="pluto/base_footprint"/>
     <origin xyz="0.0 0.0 ${-(wheel_radius+wheel_zoff)}" rpy="0 0 0"/>
   </joint>
 
   <!-- Wheels -->
   <xacro:macro name="wheel" params="prefix x_reflect y_reflect">
-    <link name="pippo/${prefix}_link">
+    <link name="pluto/${prefix}_link">
       <visual>
         <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
         <geometry>
@@ -93,9 +93,9 @@
       <xacro:cylinder_inertia m="2.5" r="${wheel_radius}" h="${wheel_width}"/>
     </link>
 
-    <joint name="pippo_${prefix}_joint" type="continuous">
-      <parent link="pippo/base_link"/>
-      <child link="pippo/${prefix}_link"/>
+    <joint name="pluto_${prefix}_joint" type="continuous">
+      <parent link="pluto/base_link"/>
+      <child link="pluto/${prefix}_link"/>
       <origin xyz="${x_reflect*wheel_xoff} ${y_reflect*(base_width/2+wheel_ygap)} ${-wheel_zoff}" rpy="0 0 0"/>
       <axis xyz="0 1 0"/>
       <dynamics damping="0.2"/>
@@ -107,7 +107,7 @@
   <xacro:wheel prefix="drivewhl_l_rear" x_reflect="1" y_reflect="1" />
   <xacro:wheel prefix="drivewhl_r_rear" x_reflect="1" y_reflect="-1" />
 
-  <link name="pippo/gnss_link">
+  <link name="pluto/gnss_link">
     <collision>
         <geometry>
             <sphere radius="0.05"/>
@@ -128,21 +128,21 @@
 
   <joint name="gnss_joint" type="fixed">
     <origin xyz="0 0 -0.05" rpy="0 0 0"/>
-    <parent link="pippo/base_link"/>
-    <child link="pippo/gnss_link"/>
+    <parent link="pluto/base_link"/>
+    <child link="pluto/gnss_link"/>
   </joint>
 
-  <gazebo reference="pippo/gnss_link">
+  <gazebo reference="pluto/gnss_link">
     <sensor name="GazeboNavSat" type="navsat">
         <always_on>1</always_on>
         <update_rate>25.0</update_rate>
         <visualize>true</visualize>
-        <topic>/pippo/gps/fix</topic>
-        <ignition_frame_id>/pippo/gnss_link</ignition_frame_id>
+        <topic>/pluto/gps/fix</topic>
+        <ignition_frame_id>/pluto/gnss_link</ignition_frame_id>
     </sensor>
   </gazebo>
 
-  <link name="pippo/imu_link">
+  <link name="pluto/imu_link">
     <visual>
       <geometry>
         <box size="0.1 0.1 0.1"/>
@@ -159,18 +159,18 @@
   </link>
 
   <joint name="imu_joint" type="fixed">
-    <parent link="pippo/base_link"/>
-    <child link="pippo/imu_link"/>
+    <parent link="pluto/base_link"/>
+    <child link="pluto/imu_link"/>
     <origin xyz="0 0 0.01"/>
   </joint>
 
-  <gazebo reference="pippo/imu_link">
+  <gazebo reference="pluto/imu_link">
     <sensor name="imu_sensor" type="imu">
-      <ignition_frame_id>/pippo/imu_link</ignition_frame_id>
+      <ignition_frame_id>/pluto/imu_link</ignition_frame_id>
       <plugin filename="ignition-gazebo-imu-system" name="ignition::gazebo::systems::Imu">
       </plugin>
 
-      <topic>/pippo/imu</topic>
+      <topic>/pluto/imu</topic>
       <always_on>true</always_on>
       <update_rate>100</update_rate>
       <visualize>true</visualize>
@@ -231,7 +231,7 @@
     </sensor>
   </gazebo>
 
-  <link name="pippo/lidar_link">
+  <link name="pluto/lidar_link">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="0.125"/>
@@ -257,15 +257,15 @@
   </link>
 
   <joint name="lidar_joint" type="fixed">
-    <parent link="pippo/base_link"/>
-    <child link="pippo/lidar_link"/>
+    <parent link="pluto/base_link"/>
+    <child link="pluto/lidar_link"/>
     <origin xyz="0 0 0.12" rpy="0 0 0"/>
   </joint>
 
-  <gazebo reference="pippo/lidar_link">
+  <gazebo reference="pluto/lidar_link">
     <sensor name="lidar" type="gpu_lidar">
-      <ignition_frame_id>pippo/lidar_link</ignition_frame_id>
-      <topic>/pippo/scan</topic>
+      <ignition_frame_id>pluto/lidar_link</ignition_frame_id>
+      <topic>/pluto/scan</topic>
       <always_on>true</always_on>
       <visualize>true</visualize>
       <update_rate>5</update_rate>
@@ -296,7 +296,7 @@
     <hardware>
       <plugin>ign_ros2_control/IgnitionSystem</plugin>
     </hardware>
-    <joint name="pippo_drivewhl_l_front_joint">
+    <joint name="pluto_drivewhl_l_front_joint">
       <command_interface name="velocity">
         <param name="min">-1</param>
         <param name="max">1</param>
@@ -304,7 +304,7 @@
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
-    <joint name="pippo_drivewhl_r_front_joint">
+    <joint name="pluto_drivewhl_r_front_joint">
       <command_interface name="velocity">
         <param name="min">-1</param>
         <param name="max">1</param>
@@ -312,7 +312,7 @@
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
-    <joint name="pippo_drivewhl_l_rear_joint">
+    <joint name="pluto_drivewhl_l_rear_joint">
       <command_interface name="velocity">
         <param name="min">-1</param>
         <param name="max">1</param>
@@ -320,7 +320,7 @@
       <state_interface name="position"/>
       <state_interface name="velocity"/>
     </joint>
-    <joint name="pippo_drivewhl_r_rear_joint">
+    <joint name="pluto_drivewhl_r_rear_joint">
       <command_interface name="velocity">
         <param name="min">-1</param>
         <param name="max">1</param>
@@ -332,11 +332,11 @@
 
   <gazebo>
     <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
-      <controller_manager_prefix_node_name>pippo</controller_manager_prefix_node_name>
+      <controller_manager_prefix_node_name>pluto</controller_manager_prefix_node_name>
       <parameters>$(find simulation)/config/controller_manager.yaml</parameters>
       <ros>
-        <namespace>pippo</namespace>
-        <!-- <remapping>pippo_diff_drive_controller/cmd_vel_unstamped:=cmd_vel</remapping> -->
+        <namespace>pluto</namespace>
+        <!-- <remapping>pluto_diff_drive_controller/cmd_vel_unstamped:=cmd_vel</remapping> -->
       </ros>
     </plugin>
   </gazebo>

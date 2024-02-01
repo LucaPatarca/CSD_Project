@@ -51,6 +51,10 @@ def generate_launch_description():
     pippo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(pkg_simulation, 'launch/pippo.launch.py'))
     )
+    
+    pluto = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(pkg_simulation, 'launch/pluto.launch.py'))
+    )
 
     return LaunchDescription([
         SetEnvironmentVariable(
@@ -66,7 +70,8 @@ def generate_launch_description():
           default_value=[os.path.join(pkg_simulation, 'worlds', 'empty.sdf') + ' -r'],
           description='Ignition Gazebo arguments'),
         gazebo,
-        rviz_node,
+        # rviz_node,
         bridge,
         pippo,
+        pluto,
     ])
