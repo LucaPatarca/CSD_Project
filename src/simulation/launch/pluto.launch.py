@@ -20,6 +20,7 @@ def generate_launch_description():
         executable="robot_state_publisher",
         # name="pluto_state_publisher",
         namespace="pluto",
+        remappings=[("/tf", "tf"), ("/tf_static", "tf_static")],
         parameters=[
             {"robot_description": Command(["xacro ", os.path.join(pkg_simulation, "urdf/pluto.urdf")])}
         ],

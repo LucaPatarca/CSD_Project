@@ -20,7 +20,7 @@ def generate_launch_description():
         executable="robot_state_publisher",
         # name="pippo_state_publisher",
         namespace="pippo",
-        # remappings=[("/tf", "tf"), ("/tf_static", "tf_static")],
+        remappings=[("/tf", "tf"), ("/tf_static", "tf_static")],
         parameters=[
             {"robot_description": Command(["xacro ", os.path.join(pkg_simulation, "urdf/pippo.urdf")])}
         ],

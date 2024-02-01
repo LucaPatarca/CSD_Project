@@ -337,6 +337,8 @@
       <ros>
         <namespace>pippo</namespace>
         <!-- <remapping>pippo_diff_drive_controller/cmd_vel_unstamped:=cmd_vel</remapping> -->
+        <remapping>/tf:=tf</remapping>
+        <remapping>/tf_static:=tf_static</remapping>
       </ros>
     </plugin>
   </gazebo>

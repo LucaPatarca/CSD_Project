@@ -30,7 +30,9 @@ def generate_launch_description():
     rviz_node = Node(
         package="rviz2",
         executable="rviz2",
+        namespace="pippo",
         name="rviz2",
+        remappings=[("/tf", "tf"), ("/tf_static", "tf_static")],
         output="screen",
         arguments=["-d", os.path.join(pkg_simulation, "rviz/simulation.rviz")],
     )
@@ -70,7 +72,7 @@ def generate_launch_description():
           default_value=[os.path.join(pkg_simulation, 'worlds', 'empty.sdf') + ' -r'],
           description='Ignition Gazebo arguments'),
         gazebo,
-        # rviz_node,
+        rviz_node,
         bridge,
         pippo,
         pluto,
