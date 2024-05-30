@@ -6,6 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /LaserScan1/Topic1
+        - /TF1
         - /TF1/Frames1
         - /TF1/Tree1
       Splitter Ratio: 0.5
@@ -14,7 +15,7 @@ Panels:
     Name: Selection
   - Class: rviz_common/Tool Properties
     Expanded:
-      - /2D Goal Pose1
+      - /2D Pose Estimate1
     Name: Tool Properties
     Splitter Ratio: 0.5886790156364441
   - Class: rviz_common/Views
@@ -100,8 +101,6 @@ Visualization Manager:
           Value: true
         pippo/lidar_link:
           Value: true
-        pippo/odom:
-          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
@@ -125,14 +124,82 @@ Visualization Manager:
             {}
           pippo/lidar_link:
             {}
-        pippo/odom:
-          {}
       Update Interval: 0
       Value: true
+    - Alpha: 1
+      Class: rviz_default_plugins/RobotModel
+      Collision Enabled: false
+      Description File: ""
+      Description Source: Topic
+      Description Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /pippo/robot_description
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        pippo/base_footprint:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        pippo/base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pippo/drivewhl_l_front_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pippo/drivewhl_l_rear_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pippo/drivewhl_r_front_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pippo/drivewhl_r_rear_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pippo/gnss_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pippo/imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pippo/lidar_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Mass Properties:
+        Inertia: false
+        Mass: false
+      Name: RobotModel
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
   Enabled: true
   Global Options:
     Background Color: 207; 207; 207
-    Fixed Frame: pippo/odom
+    Fixed Frame: pippo/base_link
     Frame Rate: 30
   Name: root
   Tools:
@@ -141,13 +208,16 @@ Visualization Manager:
     - Class: rviz_default_plugins/FocusCamera
     - Class: rviz_default_plugins/Measure
       Line color: 128; 128; 0
-    - Class: rviz_default_plugins/SetGoal
+    - Class: rviz_default_plugins/SetInitialPose
+      Covariance x: 0.25
+      Covariance y: 0.25
+      Covariance yaw: 0.06853891909122467
       Topic:
         Depth: 5
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: goal_pose
+        Value: set_pose
   Transformation:
     Current:
       Class: rviz_default_plugins/TF
@@ -155,25 +225,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 11.092724800109863
+      Distance: 5.837331295013428
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.2592575252056122
-        Y: -0.744534432888031
-        Z: 0.33202704787254333
+        X: 0.5624010562896729
+        Y: 0.13753741979599
+        Z: 0.4638221859931946
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5052025318145752
+      Pitch: 0.5302024483680725
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.4422194957733154
+      Yaw: 2.5522382259368896
     Saved: ~
 Window Geometry:
   Displays:

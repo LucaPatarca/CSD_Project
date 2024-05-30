@@ -1,4 +1,4 @@
-pippo/controller_manager:
+controller_manager:
   ros__parameters:
     update_rate: 25  # Hz
 
@@ -8,11 +8,11 @@ pippo/controller_manager:
     pippo_diff_drive_controller:
       type: diff_drive_controller/DiffDriveController
 
-pippo/pippo_joint_state_broadcaster:
+pippo_joint_state_broadcaster:
   ros__parameters:
     use_local_topic: true
 
-pippo/pippo_diff_drive_controller:
+pippo_diff_drive_controller:
   ros__parameters:
     left_wheel_names: ["pippo_drivewhl_l_front_joint", "pippo_drivewhl_l_rear_joint"]
     right_wheel_names: ["pippo_drivewhl_r_front_joint", "pippo_drivewhl_r_rear_joint"]
@@ -26,9 +26,9 @@ pippo/pippo_diff_drive_controller:
     right_wheel_radius_multiplier: 1.0
 
     publish_rate: 50.0
-    tf_frame_prefix_enable: true
+    tf_frame_prefix_enable: false
     odom_frame_id: odom
-    base_frame_id: base_link
+    base_frame_id: pippo/base_link
     pose_covariance_diagonal : [0.001, 0.001, 0.0, 0.0, 0.0, 0.01]
     twist_covariance_diagonal: [0.001, 0.0, 0.0, 0.0, 0.0, 0.01]
 

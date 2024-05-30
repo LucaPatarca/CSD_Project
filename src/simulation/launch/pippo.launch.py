@@ -19,8 +19,8 @@ def generate_launch_description():
         package="robot_state_publisher",
         executable="robot_state_publisher",
         # name="pippo_state_publisher",
-        namespace="pippo",
-        remappings=[("/tf", "tf"), ("/tf_static", "tf_static")],
+        # namespace="pippo",
+        remappings=[("/robot_description", "/pippo/robot_description")],
         parameters=[
             {"robot_description": Command(["xacro ", os.path.join(pkg_simulation, "urdf/pippo.urdf")])}
         ],
@@ -47,7 +47,7 @@ def generate_launch_description():
             "control",
             "load_controller",
             "--set-state", "active",
-            "-c", "pippo/controller_manager",
+            "-c", "controller_manager",
             "pippo_joint_state_broadcaster",
         ],
         shell=False,
@@ -61,11 +61,15 @@ def generate_launch_description():
             "control",
             "load_controller",
             "--set-state", "active",
-            "-c", "pippo/controller_manager",
+            "-c", "controller_manager",
             "pippo_diff_drive_controller",
         ],
         shell=False,
         output="screen",
+    )
+    
+    localization = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(pkg_simulation, 'launch/pippo-loc.launch.py'))
     )
 
     return LaunchDescription([
@@ -83,4 +87,5 @@ def generate_launch_description():
                 on_exit=[load_diff_drive_controller],
             )
         ),
+        localization,
     ])

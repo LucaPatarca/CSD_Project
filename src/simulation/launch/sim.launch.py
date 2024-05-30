@@ -32,7 +32,7 @@ def generate_launch_description():
         executable="rviz2",
         namespace="pippo",
         name="rviz2",
-        remappings=[("/tf", "tf"), ("/tf_static", "tf_static")],
+        # remappings=[("/tf", "tf"), ("/tf_static", "tf_static")],
         output="screen",
         arguments=["-d", os.path.join(pkg_simulation, "rviz/simulation.rviz")],
     )
@@ -57,6 +57,10 @@ def generate_launch_description():
     pluto = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(pkg_simulation, 'launch/pluto.launch.py'))
     )
+    
+    navigation = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(pkg_simulation, 'launch/nav.launch.py'))
+    )
 
     return LaunchDescription([
         SetEnvironmentVariable(
@@ -75,5 +79,6 @@ def generate_launch_description():
         rviz_node,
         bridge,
         pippo,
-        pluto,
+        # pluto,
+        # navigation,
     ])
