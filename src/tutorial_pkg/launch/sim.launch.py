@@ -9,6 +9,7 @@ from launch_ros.actions import Node
 def generate_launch_description():
     tutorial_pkg = FindPackageShare('tutorial_pkg')
     gazebo_pkg = FindPackageShare('rosbot_xl_gazebo')
+    map_merge_pkg = FindPackageShare('multirobot_map_merge')
 
     explore_launch_path = PathJoinSubstitution(
         [tutorial_pkg, 'launch', 'explore.launch.py']
@@ -19,6 +20,10 @@ def generate_launch_description():
 
     gazebo_spawn_path = PathJoinSubstitution(
         [gazebo_pkg, 'launch', 'spawn.launch.py']
+    )
+
+    map_merge_launch_path = PathJoinSubstitution(
+        [map_merge_pkg, 'launch', 'map_merge.launch.py']
     )
 
     use_sim_time = LaunchConfiguration('use_sim_time')
@@ -80,6 +85,13 @@ def generate_launch_description():
         }.items(),
     )
 
+    map_merge_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([map_merge_launch_path]),
+        launch_arguments={
+            # 'known_init_poses': 'False',
+        }.items(),
+    )
+
     return LaunchDescription(
         [
             declare_use_sim_time_cmd,
@@ -89,5 +101,6 @@ def generate_launch_description():
             explore_launch,
             rviz_node_pluto,
             explore_launch_pluto,
+            map_merge_launch
         ]
     )
