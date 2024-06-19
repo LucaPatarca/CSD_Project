@@ -29,13 +29,16 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time')
 
     declare_use_sim_time_cmd = DeclareLaunchArgument(
-        'use_sim_time', default_value='false', description='Use simulation (Gazebo) clock if true'
+        'use_sim_time', default_value='true', description='Use simulation (Gazebo) clock if true'
     )
 
-    gazebo_launch = IncludeLaunchDescription(
+    gazebo_launch_pippo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([gazebo_launch_path]),
         launch_arguments={
             'namespace': 'pippo',
+            'x': '0.0',
+            'y': '2.0',
+            'use_sim_time': 'True',
             'camera_model': 'None',
         }.items(),
     )
@@ -51,7 +54,7 @@ def generate_launch_description():
         }.items(),
     )
 
-    rviz_node = Node(
+    rviz_node_pippo = Node(
         package="rviz2",
         executable="rviz2",
         namespace="pippo",
@@ -60,7 +63,7 @@ def generate_launch_description():
         arguments=["-d", PathJoinSubstitution([tutorial_pkg, "rviz", "explore.rviz"])],
     )
 
-    explore_launch = IncludeLaunchDescription(
+    explore_launch_pippo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([explore_launch_path]),
         launch_arguments={
             'use_sim_time': use_sim_time,
@@ -92,15 +95,23 @@ def generate_launch_description():
         }.items(),
     )
 
+    battery_pippo = Node(
+        package="tutorial_pkg",
+        executable="battery_state_pub.py",
+        namespace="pippo",
+        output="screen",
+    )
+
     return LaunchDescription(
         [
             declare_use_sim_time_cmd,
-            gazebo_launch,
+            gazebo_launch_pippo,
             gazebo_launch_pluto,
-            rviz_node,
-            explore_launch,
+            rviz_node_pippo,
+            explore_launch_pippo,
             rviz_node_pluto,
             explore_launch_pluto,
-            map_merge_launch
+            # map_merge_launch,
+            # battery_pippo
         ]
     )

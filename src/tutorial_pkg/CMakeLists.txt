@@ -7,6 +7,7 @@ endif()
 
 # find dependencies
 find_package(ament_cmake REQUIRED)
+find_package(ament_cmake_python REQUIRED)
 find_package(rclcpp REQUIRED)
 
 if(BUILD_TESTING)
@@ -26,6 +27,13 @@ install(DIRECTORY
   launch
   maps
   rviz
-  DESTINATION share/${PROJECT_NAME})
+  DESTINATION share/${PROJECT_NAME}
+)
+
+# Install Python executables
+install(PROGRAMS
+  scripts/battery_state/battery_state_pub.py
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 ament_package()
