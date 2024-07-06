@@ -32,11 +32,16 @@ def generate_launch_description():
         'use_sim_time', default_value='false', description='Use simulation (Gazebo) clock if true'
     )
 
+    world_file = PathJoinSubstitution([tutorial_pkg, "worlds", "house.world"])
+
     gazebo_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([gazebo_launch_path]),
         launch_arguments={
             'namespace': 'pippo',
             'camera_model': 'None',
+            'x': '1.0',
+            'y': '3.0',
+            'world': world_file,
         }.items(),
     )
 
@@ -44,8 +49,8 @@ def generate_launch_description():
         PythonLaunchDescriptionSource([gazebo_spawn_path]),
         launch_arguments={
             'namespace': 'pluto',
-            'x': '-1.0',
-            'y': '2.0',
+            'x': '1.0',
+            'y': '-4.0',
             'use_sim_time': 'True',
             'camera_model': 'None',
         }.items(),
@@ -92,6 +97,20 @@ def generate_launch_description():
         }.items(),
     )
 
+    battery_pippo = Node(
+        package="tutorial_pkg",
+        executable="battery_state_pub.py",
+        namespace="pippo",
+        name="pippo_battery",
+    )
+
+    battery_pluto = Node(
+        package="tutorial_pkg",
+        executable="battery_state_pub.py",
+        namespace="pluto",
+        name="pluto_battery",
+    )
+
     return LaunchDescription(
         [
             declare_use_sim_time_cmd,
@@ -101,6 +120,8 @@ def generate_launch_description():
             explore_launch,
             rviz_node_pluto,
             explore_launch_pluto,
-            map_merge_launch
+            # battery_pluto,
+            # battery_pippo,
+            # map_merge_launch,
         ]
     )
