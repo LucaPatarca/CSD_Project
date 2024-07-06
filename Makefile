@@ -1,16 +1,19 @@
-all: build
+all: build-all
 
-.PHONY: build
-build: src
+.PHONY: build-all
+build-all: src
 	colcon build
 	@echo ''
 	@echo 'REMEMBER TO RUN ". install/setup.bash"'
 
-run: install
-	ros2 launch simulation sim.launch.py
+.PHONY: build
+build: src
+	colcon build --packages-select=tutorial_pkg
+	@echo ''
+	@echo 'REMEMBER TO RUN ". install/setup.bash"'
 
-run-nav: install
-	ros2 launch sam_bot_nav2_gz complete_navigation.launch.py 
+run: install
+	ros2 launch tutorial_pkg sim.launch.py use_sim_time:=True
 
 clean:
 	rm -rf build/ install log
