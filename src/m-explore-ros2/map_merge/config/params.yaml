@@ -8,7 +8,7 @@ map_merge:
     robot_map_updates_topic: map_updates
     robot_namespace: ""
     merged_map_topic: map
-    world_frame: world #TODO: check if it works, should be 'map'?
+    world_frame: map
     known_init_poses: true
     # known_init_poses: false
 

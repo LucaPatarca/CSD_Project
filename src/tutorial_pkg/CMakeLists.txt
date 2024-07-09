@@ -31,6 +31,7 @@ install(DIRECTORY
 
 install(PROGRAMS
   scripts/battery_state/battery_state_pub.py
+  scripts/controller/controller.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
