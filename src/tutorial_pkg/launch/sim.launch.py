@@ -37,7 +37,7 @@ def generate_launch_description():
     gazebo_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([gazebo_launch_path]),
         launch_arguments={
-            'namespace': 'pippo',
+            'namespace': 'robot1',
             'camera_model': 'None',
             'x': '1.0',
             'y': '3.0',
@@ -45,10 +45,10 @@ def generate_launch_description():
         }.items(),
     )
 
-    gazebo_launch_pluto = IncludeLaunchDescription(
+    gazebo_launch_robot2 = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([gazebo_spawn_path]),
         launch_arguments={
-            'namespace': 'pluto',
+            'namespace': 'robot2',
             'x': '1.0',
             'y': '-4.0',
             'use_sim_time': 'True',
@@ -59,7 +59,7 @@ def generate_launch_description():
     rviz_node = Node(
         package="rviz2",
         executable="rviz2",
-        namespace="pippo",
+        namespace="robot1",
         remappings=[('/tf', 'tf'), ('/tf_static', 'tf_static')],
         name="rviz2",
         arguments=["-d", PathJoinSubstitution([tutorial_pkg, "rviz", "explore.rviz"])],
@@ -69,25 +69,53 @@ def generate_launch_description():
         PythonLaunchDescriptionSource([explore_launch_path]),
         launch_arguments={
             'use_sim_time': use_sim_time,
-            'namespace': 'pippo',
+            'namespace': 'robot1',
         }.items(),
     )
 
-    rviz_node_pluto = Node(
+    rviz_node_robot2 = Node(
         package="rviz2",
         executable="rviz2",
-        namespace="pluto",
+        namespace="robot2",
         remappings=[('/tf', 'tf'), ('/tf_static', 'tf_static')],
         name="rviz2",
         arguments=["-d", PathJoinSubstitution([tutorial_pkg, "rviz", "explore.rviz"])],
     )
 
-    explore_launch_pluto = IncludeLaunchDescription(
+    explore_launch_robot2 = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([explore_launch_path]),
         launch_arguments={
             'use_sim_time': use_sim_time,
-            'namespace': 'pluto',
+            'namespace': 'robot2',
         }.items(),
+    )
+
+    battery_robot1 = Node(
+        package="tutorial_pkg",
+        executable="battery_state_pub.py",
+        namespace="robot1",
+        name="robot1_battery",
+    )
+
+    battery_controller_robot1 = Node(
+        package="tutorial_pkg",
+        executable="controller.py",
+        namespace="robot1",
+        name="robot1_battery_controller",
+    )
+
+    battery_robot2 = Node(
+        package="tutorial_pkg",
+        executable="battery_state_pub.py",
+        namespace="robot2",
+        name="robot2_battery",
+    )
+
+    battery_controller_robot2 = Node(
+        package="tutorial_pkg",
+        executable="controller.py",
+        namespace="robot2",
+        name="robot2_battery_controller",
     )
 
     map_merge_launch = IncludeLaunchDescription(
@@ -97,31 +125,19 @@ def generate_launch_description():
         }.items(),
     )
 
-    battery_pippo = Node(
-        package="tutorial_pkg",
-        executable="battery_state_pub.py",
-        namespace="pippo",
-        name="pippo_battery",
-    )
-
-    battery_pluto = Node(
-        package="tutorial_pkg",
-        executable="battery_state_pub.py",
-        namespace="pluto",
-        name="pluto_battery",
-    )
-
     return LaunchDescription(
         [
             declare_use_sim_time_cmd,
             gazebo_launch,
-            # gazebo_launch_pluto,
+            gazebo_launch_robot2,
             rviz_node,
             explore_launch,
-            # rviz_node_pluto,
-            # explore_launch_pluto,
-            # battery_pluto,
-            # battery_pippo,
+            rviz_node_robot2,
+            explore_launch_robot2,
+            battery_robot1,
+            battery_controller_robot1,
+            battery_robot2,
+            battery_controller_robot2,
             # map_merge_launch,
         ]
     )

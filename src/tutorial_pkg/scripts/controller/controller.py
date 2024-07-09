@@ -23,7 +23,7 @@ class Controller(Node):
     self.nav = BasicNavigator()
 
   def battery_callback(self, msg: BatteryState):
-    if(msg.percentage < 0.85 and msg._power_supply_status != BatteryState.POWER_SUPPLY_STATUS_CHARGING):
+    if(msg.percentage < 0.30 and msg._power_supply_status != BatteryState.POWER_SUPPLY_STATUS_CHARGING):
       explore_msg = Bool()
       explore_msg.data = False
       self.explore_pub.publish(explore_msg)

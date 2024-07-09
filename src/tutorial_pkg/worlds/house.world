@@ -13139,7 +13139,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/meshes/officechair.dae</uri>
+              <uri>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/meshes/officechair.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -13147,10 +13147,10 @@
             <specular>1 1 1 1</specular>
             <pbr>
               <metal>
-                <albedo_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Albedo.png</albedo_map>
-                <normal_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Normal.png</normal_map>
-                <roughness_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Roughness.png</roughness_map>
-                <metalness_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Metalness.png</metalness_map>
+                <albedo_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Albedo.png</albedo_map>
+                <normal_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Normal.png</normal_map>
+                <roughness_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Roughness.png</roughness_map>
+                <metalness_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Metalness.png</metalness_map>
               </metal>
             </pbr>
           </material>
@@ -13530,7 +13530,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/meshes/officechair.dae</uri>
+              <uri>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/meshes/officechair.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -13538,10 +13538,10 @@
             <specular>1 1 1 1</specular>
             <pbr>
               <metal>
-                <albedo_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Albedo.png</albedo_map>
-                <normal_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Normal.png</normal_map>
-                <roughness_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Roughness.png</roughness_map>
-                <metalness_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Metalness.png</metalness_map>
+                <albedo_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Albedo.png</albedo_map>
+                <normal_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Normal.png</normal_map>
+                <roughness_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Roughness.png</roughness_map>
+                <metalness_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Metalness.png</metalness_map>
               </metal>
             </pbr>
           </material>
@@ -13921,7 +13921,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/meshes/officechair.dae</uri>
+              <uri>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/meshes/officechair.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -13929,10 +13929,10 @@
             <specular>1 1 1 1</specular>
             <pbr>
               <metal>
-                <albedo_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Albedo.png</albedo_map>
-                <normal_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Normal.png</normal_map>
-                <roughness_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Roughness.png</roughness_map>
-                <metalness_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Metalness.png</metalness_map>
+                <albedo_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Albedo.png</albedo_map>
+                <normal_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Normal.png</normal_map>
+                <roughness_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Roughness.png</roughness_map>
+                <metalness_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/office chair/1/materials/textures/OfficeChair_Metalness.png</metalness_map>
               </metal>
             </pbr>
           </material>
@@ -14312,7 +14312,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/refrigerator/1/meshes/fridge.dae</uri>
+              <uri>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/refrigerator/1/meshes/fridge.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -14320,10 +14320,10 @@
             <specular>1 1 1 1</specular>
             <pbr>
               <metal>
-                <albedo_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/refrigerator/1/materials/textures/Fridge_Albedo.jpg</albedo_map>
-                <normal_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/refrigerator/1/materials/textures/Fridge_Normal.png</normal_map>
-                <roughness_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/refrigerator/1/materials/textures/Fridge_Roughness.jpg</roughness_map>
-                <metalness_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/refrigerator/1/materials/textures/Fridge_Metalness.jpg</metalness_map>
+                <albedo_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/refrigerator/1/materials/textures/Fridge_Albedo.jpg</albedo_map>
+                <normal_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/refrigerator/1/materials/textures/Fridge_Normal.png</normal_map>
+                <roughness_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/refrigerator/1/materials/textures/Fridge_Roughness.jpg</roughness_map>
+                <metalness_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/refrigerator/1/materials/textures/Fridge_Metalness.jpg</metalness_map>
               </metal>
             </pbr>
           </material>
@@ -14361,7 +14361,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/refrigerator/1/meshes/fridge.dae</uri>
+              <uri>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/refrigerator/1/meshes/fridge.dae</uri>
             </mesh>
           </geometry>
           <material>
@@ -14369,10 +14369,10 @@
             <specular>1 1 1 1</specular>
             <pbr>
               <metal>
-                <albedo_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/refrigerator/1/materials/textures/Fridge_Albedo.jpg</albedo_map>
-                <normal_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/refrigerator/1/materials/textures/Fridge_Normal.png</normal_map>
-                <roughness_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/refrigerator/1/materials/textures/Fridge_Roughness.jpg</roughness_map>
-                <metalness_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/refrigerator/1/materials/textures/Fridge_Metalness.jpg</metalness_map>
+                <albedo_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/refrigerator/1/materials/textures/Fridge_Albedo.jpg</albedo_map>
+                <normal_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/refrigerator/1/materials/textures/Fridge_Normal.png</normal_map>
+                <roughness_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/refrigerator/1/materials/textures/Fridge_Roughness.jpg</roughness_map>
+                <metalness_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/refrigerator/1/materials/textures/Fridge_Metalness.jpg</metalness_map>
               </metal>
             </pbr>
           </material>
@@ -14411,7 +14411,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/dining table/1/meshes/diningtable.dae</uri>
+              <uri>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/dining table/1/meshes/diningtable.dae</uri>
               <submesh>
                 <name>Wood</name>
                 <center>0</center>
@@ -14423,9 +14423,9 @@
             <specular>1 1 1 1</specular>
             <pbr>
               <metal>
-                <albedo_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/dining table/1/materials/textures/Wood_Albedo.png</albedo_map>
-                <normal_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/dining table/1/materials/textures/Wood_Normal.png</normal_map>
-                <roughness_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/dining table/1/materials/textures/Wood_Roughness.png</roughness_map>
+                <albedo_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/dining table/1/materials/textures/Wood_Albedo.png</albedo_map>
+                <normal_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/dining table/1/materials/textures/Wood_Normal.png</normal_map>
+                <roughness_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/dining table/1/materials/textures/Wood_Roughness.png</roughness_map>
               </metal>
             </pbr>
           </material>
@@ -14434,7 +14434,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/dining table/1/meshes/diningtable.dae</uri>
+              <uri>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/openrobotics/models/dining table/1/meshes/diningtable.dae</uri>
               <submesh>
                 <name>Black</name>
                 <center>0</center>
@@ -17805,7 +17805,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/cart_base_collision.stl</uri>
+              <uri>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/cart_base_collision.stl</uri>
             </mesh>
           </geometry>
           <max_contacts>5</max_contacts>
@@ -17836,7 +17836,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/cart_base.dae</uri>
+              <uri>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/cart_base.dae</uri>
               <submesh>
                 <name>base_metal</name>
                 <center>0</center>
@@ -17849,7 +17849,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/cart_base.dae</uri>
+              <uri>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/cart_base.dae</uri>
               <submesh>
                 <name>base_shelf</name>
                 <center>0</center>
@@ -17862,7 +17862,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/sup_wheels.dae</uri>
+              <uri>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/sup_wheels.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -17871,7 +17871,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/sup_wheels.dae</uri>
+              <uri>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/sup_wheels.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -17880,7 +17880,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/cart_base.dae</uri>
+              <uri>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/cart_base.dae</uri>
               <submesh>
                 <name>tag</name>
                 <center>0</center>
@@ -17892,7 +17892,7 @@
             <specular>1 1 1 1</specular>
             <pbr>
               <metal>
-                <albedo_map>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/cart_tag.png</albedo_map>
+                <albedo_map>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/cart_tag.png</albedo_map>
               </metal>
             </pbr>
           </material>
@@ -17951,7 +17951,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/wheel.dae</uri>
+              <uri>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/wheel.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -18026,7 +18026,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/wheel.dae</uri>
+              <uri>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/wheel.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -18070,7 +18070,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/sup_wheels.dae</uri>
+              <uri>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/sup_wheels.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -18144,7 +18144,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/wheel.dae</uri>
+              <uri>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/wheel.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -18188,7 +18188,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/sup_wheels.dae</uri>
+              <uri>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/sup_wheels.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -18262,7 +18262,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/wheel.dae</uri>
+              <uri>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/cart_model_2/2/meshes/wheel.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -18319,7 +18319,7 @@
           <geometry>
             <mesh>
               <scale>0.2 0.3 0.3</scale>
-              <uri>/home/luca/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/shelf/1/meshes/shelf_big_movai.dae</uri>
+              <uri>/home/csd-project/.ignition/fuel/fuel.ignitionrobotics.org/movai/models/shelf/1/meshes/shelf_big_movai.dae</uri>
             </mesh>
           </geometry>
         </visual>

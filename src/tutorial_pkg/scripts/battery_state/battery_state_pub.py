@@ -54,7 +54,7 @@ class BatteryStatePublisher(Node):
     self.battery_voltage = 9.0 # Initialize the battery voltage level
     self.percent_charge_level = 1.0  # Initialize the percentage charge level
     self.decrement_factor = 0.98 # Used to reduce battery level each cycle
-    self.perc_decrement_factor = 0.03
+    self.perc_decrement_factor = 0.01
     self.charging = False
       
   def get_battery_state(self):
@@ -70,7 +70,7 @@ class BatteryStatePublisher(Node):
     if self.charging:
       msg.power_supply_status = BatteryState.POWER_SUPPLY_STATUS_CHARGING
       self.battery_voltage = 9.0
-      self.percent_charge_level = self.percent_charge_level + (self.perc_decrement_factor * 3.0)
+      self.percent_charge_level = self.percent_charge_level + (self.perc_decrement_factor * 20.0)
       if self.percent_charge_level >= 1.0:
         self.percent_charge_level = 1.0
         self.charging = False
@@ -79,11 +79,11 @@ class BatteryStatePublisher(Node):
       # Decrement the battery state 
       self.battery_voltage = self.battery_voltage * self.decrement_factor
       self.percent_charge_level = self.percent_charge_level - self.perc_decrement_factor
-      if self.percent_charge_level < 0:
-        self.percent_charge_level = 0
+      if self.percent_charge_level < 0.0:
+        self.percent_charge_level = 0.0
         
     self.publisher_battery_state.publish(msg) # Publish BatteryState message
-    self.get_logger().info('Battery percentage: "%f"' % msg.percentage)
+    # self.get_logger().info('Battery percentage: "%f"' % msg.percentage)
 
   def listener_callback(self, msg):
     self.charging = True
